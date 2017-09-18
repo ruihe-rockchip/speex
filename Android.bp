@@ -58,7 +58,7 @@ cc_library_shared {
         arm: {
             instruction_set: "arm",
 
-            armv7_a_neon: {
+            neon: {
                 cflags: ["-D_USE_NEON"],
             },
         },
