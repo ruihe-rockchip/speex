@@ -341,7 +341,6 @@ static int resampler_basic_direct_single(SpeexResamplerState *st, spx_uint32_t c
    const int frac_advance = st->frac_advance;
    const spx_uint32_t den_rate = st->den_rate;
    spx_word32_t sum;
-   int j;
 
    while (!(last_sample >= (spx_int32_t)*in_len || out_sample >= (spx_int32_t)*out_len))
    {
@@ -351,7 +350,7 @@ static int resampler_basic_direct_single(SpeexResamplerState *st, spx_uint32_t c
 #ifndef OVERRIDE_INNER_PRODUCT_SINGLE
       float accum[4] = {0,0,0,0};
 
-      for(j=0;j<N;j+=4) {
+      for(int j=0;j<N;j+=4) {
         accum[0] += sinc[j]*iptr[j];
         accum[1] += sinc[j+1]*iptr[j+1];
         accum[2] += sinc[j+2]*iptr[j+2];
