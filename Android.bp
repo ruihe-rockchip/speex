@@ -49,4 +49,10 @@ cc_library_shared {
 
     local_include_dirs: ["include"],
     export_include_dirs: ["include"],
+    sanitize: {
+        integer_overflow: true,
+        diag: {
+            integer_overflow: true,
+        },
+    },
 }
