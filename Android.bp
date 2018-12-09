@@ -51,8 +51,10 @@ cc_library_shared {
     export_include_dirs: ["include"],
     sanitize: {
         integer_overflow: true,
+        misc_undefined: ["bounds"],
         diag: {
             integer_overflow: true,
+            misc_undefined: ["bounds"],
         },
     },
 }
